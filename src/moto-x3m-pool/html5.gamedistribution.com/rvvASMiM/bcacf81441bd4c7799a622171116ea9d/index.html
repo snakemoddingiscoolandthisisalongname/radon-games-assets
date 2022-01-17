@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
+  </head>
+  <body>
+    <div id="content"></div>
+    <div id="orientation"></div>
+    <div id="loader">Loading ...</div>
+    <script type="text/javascript" src="assets/box2dweb/nape.min.js">
+      var nape = "nape.min.js";
+    </script>
+    <script type="text/javascript">
+      var notIE11 = (typeof(Event) === 'function');
+      window["GD_OPTIONS"] = {
+        "gameId": "bcacf81441bd4c7799a622171116ea9d",
+        "onEvent": function(event) {
+          switch (event.name) {
+            case "SDK_GAME_START":
+              var event;
+              if (notIE11){
+                event =  new Event("SDK_GAME_START");
+              }else{
+                event = document.createEvent('Event');
+                event.initEvent('SDK_GAME_START', true, true);
+              }
+              document.getElementById("content").dispatchEvent(event);
+              break;
+            case "SDK_GAME_PAUSE":
+              var event;
+              if (notIE11){
+                event =  new Event("SDK_GAME_PAUSE");
+              }else{
+                event = document.createEvent('Event');
+                event.initEvent('SDK_GAME_PAUSE', true, true);
+              }
+              document.getElementById("content").dispatchEvent(event);
+              break;
+            case "SDK_READY":
+              console.log("SDK_READY");
+              break;
+          }
+        },
+      };
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = '../../../html5.api.gamedistribution.com/main.min.js';
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'gamedistribution-jssdk'));
+    </script>
+  <script type="text/javascript" src="motox3m4.min.js?691008a15c637df4dcc4"></script>
+  </body>
+</html>
