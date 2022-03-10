@@ -32,10 +32,10 @@
         })
     }
     if ('undefined' != typeof EJS_DEBUG_XX && true === EJS_DEBUG_XX) {
-        await loadScript('./emu-main.js');
-        await loadScript('./emulator.js');
+        await loadScript('emu-main.js');
+        await loadScript('emulator.js');
     } else {
-        await loadScript('./emu-min.js');
+        await loadScript('emu-min.js');
     }
     var config = {};
     config.gameUrl = EJS_gameUrl;
