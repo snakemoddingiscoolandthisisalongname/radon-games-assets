@@ -1062,7 +1062,8 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
                         'arcade': ['zip'],
                         'fba0.2.97.29': ['zip'],
                         'mame2003': ['zip'],
-                        'mame': ['zip']
+                        'mame': ['zip'],
+                        'dos': ['zip']
                     },
                     _0x29078e = {
                         'psx': 'psx',
@@ -1095,7 +1096,8 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
                         'arcade': 'arcade',
                         'fba0.2.97.29': 'fba0.2.97.29',
                         'jaguar': 'jaguar',
-                        'mame2003': 'mame2003'
+                        'mame2003': 'mame2003',
+                        'dos': 'dos'
                     },
                     _0xc6823 = this,
                     _0x1143c5 = _0xc6823.system;
@@ -2121,10 +2123,7 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
                                             }) : _0x3641d6(_0x2458d5, _0x124167);
                                         }
                                         if (_0x2c1832.coreVer === 2) {
-                                            _0x1e2c68.element(_0x2c1832.elements.buttons.cheat) && _0x132da7(_0x2c1832.elements.buttons.cheat, true);
                                             _0x1e2c68.element(_0x2c1832.elements.buttons.gamepad) && _0x132da7(_0x2c1832.elements.buttons.gamepad, true);
-                                            _0x1e2c68.element(_0x2c1832.elements.buttons.mute) && _0x132da7(_0x2c1832.elements.buttons.mute, true);
-                                            _0x1e2c68.element(_0x2c1832.elements.inputs.volume) && _0x132da7(_0x2c1832.elements.inputs.volume, true);
                                             if (Array.isArray(_0x2c1832.elements.buttons.play)) {
                                                 for (var i=0; i<_0x2c1832.elements.buttons.play.length; i++) {
                                                     _0x1e2c68.element(_0x2c1832.elements.buttons.play[i]) && _0x132da7(_0x2c1832.elements.buttons.play[i], true);
@@ -4974,6 +4973,9 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
                     case 'mame':
                         _0xa88a13 = {};
                         break;
+                    case 'dos':
+                        _0xa88a13 = {};
+                        break;
                     default:
                         _0xa88a13 = {}, console.warn('Unsupported emulator');
                 }
@@ -6274,7 +6276,7 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
             var a = function(_0x154660, _0x15626f) {
                 if (!(_0x154660 instanceof _0x15626f)) throw new TypeError('Cannot call a class as a function');
             }(this, _0x6954aa);
-            this.version = '1.1.0';
+            this.version = '1.1.2';
             this.system = '';
             this.adUrl = null;
             this.gameName = null;
@@ -6299,6 +6301,9 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
             this.game.innerHTML = '';
             this.config = _0x5dc0c0({}, _0x39ca5e, _0x6954aa.defaults, _0x2ba0e6 || {});
             this.coreVer = function(core, useBeta) {
+                /*if (['dos'].includes(core)) {
+                    return 2;
+                }*/
                 if (useBeta === true) {
                     if (window.WebAssembly) {
                         var supportedCores = ['nes', 'snes', 'gb', 'nds'];
